@@ -23,7 +23,7 @@ define('SCOPES', implode(' ', array(
  */
 function getClient() {
   $client = new Google_Client();
-  $client->setDeveloperKey('AIzaSyBcYn98-h6ILI5CyAR4m3gyqEO9KCxg7pk');
+  $client->setDeveloperKey('### developer key');
   $client->setApplicationName(APPLICATION_NAME);
   $client->setScopes(SCOPES);
   $client->setAuthConfig(CLIENT_SECRET_PATH);
@@ -51,8 +51,8 @@ function insertIntoGoogleSheet($lastName, $firstName, $email) {
   $client = getClient();
   $service = new Google_Service_Sheets($client);
 
-  $spreadsheetId = '1odLv8MBMWYqyffBel4iDfFXG_3aEk9wM9Qq0yRykHV0';
-  $range = '2018 Q1!A2:J';
+  $spreadsheetId = '###spreadsheet id';
+  $range = 'Sheet 1!A2:C';
 
   $valueRange= new Google_Service_Sheets_ValueRange();
 
