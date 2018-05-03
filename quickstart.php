@@ -46,7 +46,7 @@ function expandHomeDirectory($path) {
 
 
 
-function insertIntoGoogleSheet($lastName, $firstName, $sender) {
+function insertIntoGoogleSheet($lastName, $firstName, $email) {
   // Get the API client and construct the service object.
   $client = getClient();
   $service = new Google_Service_Sheets($client);
@@ -57,7 +57,7 @@ function insertIntoGoogleSheet($lastName, $firstName, $sender) {
   $valueRange= new Google_Service_Sheets_ValueRange();
 
   // You need to specify the values you insert
-  $valueRange->setValues(["values" => [$lastName, $firstName, $sender]]);
+  $valueRange->setValues(["values" => [$lastName, $firstName, $email]]);
 
   // Then you need to add some configuration
   $conf = ["valueInputOption" => "RAW"];
